@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import Header from "./components/Header"
-import Cta from "./components/Cta"
+import Header from "../components/Header"
+import Cta from "../components/Cta"
 
 function CreditCard() {
 

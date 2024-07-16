@@ -1,21 +1,20 @@
 import { Link } from "react-router-dom"
-import Header from "./components/Header"
-import Cta from "./components/Cta"
-import {QrCode} from "./components/QrCode"
+import Header from "../components/Header"
+import Cta from "../components/Cta"
 
-function Qr() {
+function Selection() {
 
   return (
 
 
 <div className="mx-20 mx-auto mb-5 max-w-sm flex-col rounded-3xl border-4 border-t-8 border-gray-900 bg-white px-4 py-6 text-black shadow-2xl">
     <div className="text-center">
-    <Header/>
-    <Cta title="joao, pague a entrada pix"/>
-      <p className="pt-2 text-lg font-medium">qr</p>
+      <Header/>
+      <Cta title="Joao, como voce quer pagar?"/>
+  
+      <p className="pt-2 text-lg font-medium">selection</p>
       <p className="text-sm font-extrabold text-gray-900">developer at nowhere</p>
     </div>
-    <QrCode/>
     <div className="my-3 grid grid-cols-5 items-center gap-4 px-4">
   
       <a href="https://twitter.com/sahilnetic">
@@ -99,15 +98,15 @@ function Qr() {
             </div>
           </div>
         </div>
-        
+       
       </div>
     </a>
     <div>
-            <Link to="/credit-card"className="btn btn-info">credit card</Link>
+            <Link to="/qr"className="btn btn-info">qr-code scan</Link>
         </div>
   </div>
   )
 
 }
 
-export default Qr
+export default Selection
