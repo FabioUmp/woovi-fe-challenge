@@ -1,13 +1,15 @@
 type CtaProps = {
-    title: string
-}
+  title: string;
+};
 
 function Cta({ title }: CtaProps) {
   return (
     <div className="text-center">
-      <p className="pt-2 text-xl font-bold text-black-500 font-medium">{title}</p>
+      <p className="pt-2 text-xl font-bold text-black-500 font-medium">
+        {title}
+      </p>
     </div>
-  )
-};
+  );
+}
 
 export default Cta;
