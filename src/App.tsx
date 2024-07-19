@@ -10,7 +10,7 @@ const App = () => {
     <Router basename={'/'}>
       <Routes>
         <Route path="/" element={<Selection />} />
-        <Route path="/qr" element={<Qr />} />
+        <Route path="/qr/:uuid" element={<Qr />} />
         <Route path="/credit-card" element={<CreditCard />} />
       </Routes>
     </Router>

@@ -7,7 +7,7 @@ type PaymentOptionProps = {
   index: number;
   totalOptions: number;
   isSelected: boolean;
-  onSelect: (index: number) => void;
+  onSelect: (uuid: string) => void;
 };
 
 function PaymentOption({
@@ -18,17 +18,16 @@ function PaymentOption({
   onSelect,
 }: PaymentOptionProps) {
   const handleChange = () => {
-    onSelect(index);
+    onSelect(option.uuid);
   };
 
   return (
-    
     <div
       className={`mx-auto text-gray-900 text-xl bg-white border border-gray-200 
       ${index === 0 ? 'rounded-t-lg' : ''} 
       ${index === totalOptions - 1 ? 'rounded-b-lg' : ''} 
       ${index < totalOptions - 1 ? 'border-b' : ''} 
-      dark:border-green-500 ${isSelected ? 'bg-[#f4fbf9]' : ''}`}
+      dark:border-green-500 ${isSelected ? 'bg-[#F4FBF9]' : ''}`}
     >
       <div className="flex items-center justify-between px-4 py-2">
         <div className="flex-1">
@@ -36,9 +35,11 @@ function PaymentOption({
             {option.installments}x
           </span>{' '}
           R$ {formatNumber(option.amount)}
-          <p className="text-gray-400 text-sm font-light mt-2">
-            Total: {formatNumber(option.total)}
-          </p>
+          {option.total && (
+            <p className="text-gray-400 text-sm font-light mt-2">
+              Total: {formatNumber(option.total)}
+            </p>
+          )}
           {option.extra && <span className="badge"> {option.extra}</span>}
         </div>
         <input
