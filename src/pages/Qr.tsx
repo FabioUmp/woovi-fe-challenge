@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Cta from '../components/Cta';
 import QrCodeIcon from '../components/QrCodeIcon';
+import BodyQR from '../components/BodyQr';
 
 function Qr() {
   const { uuid } = useParams();
@@ -24,6 +25,9 @@ function Qr() {
               15/12/2021 - 08:17
             </span>
           </p>
+          <div>
+            <BodyQR />
+          </div>
         </div>
       </div>
       <div className="text-center mt-4">

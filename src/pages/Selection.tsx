@@ -18,7 +18,6 @@ function Selection() {
       <div className="flex items-center justify-center mb-5">
         <img src="src/assets/images/logo2.svg" />
       </div>
-
       <div>
         <Link
           to={`/qr/${selectedOption || 'not selected'}`}

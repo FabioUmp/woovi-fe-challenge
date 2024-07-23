@@ -17,34 +17,25 @@ function Body({ onSelect }: BodyProps) {
   return (
     <>
       <p>{selectedOption || 'not selected'}</p>
-      <div className="mx-auto text-gray-900 text-xl bg-white border border-gray-200 rounded-lg dark:border-gray-500">
-        {paymentOptions
-          .filter(option => option.type === 'pix')
-          .map((option, index) => (
-            <PaymentOption
-              key={option.uuid}
-              option={option}
-              index={index}
-              totalOptions={paymentOptions.length}
-              isSelected={selectedOption === option.uuid}
-              onSelect={() => handleSelect(option.uuid)}
-            />
-          ))}
-      </div>
-      <div className="mx-auto mt-4 text-gray-900 text-xl bg-white border border-gray-200 rounded-lg dark:border-gray-500">
-        {paymentOptions
-          .filter(option => option.type === 'installments')
-          .map((option, index) => (
-            <PaymentOption
-              key={option.uuid}
-              option={option}
-              index={index}
-              totalOptions={paymentOptions.length}
-              isSelected={selectedOption === option.uuid}
-              onSelect={() => handleSelect(option.uuid)}
-            />
-          ))}
-      </div>
+      {['pix', 'installments'].map(type => (
+        <div
+          key={type}
+          className="mx-auto mt-4 text-gray-900 text-xl bg-white border border-gray-200 rounded-lg dark:border-gray-500"
+        >
+          {paymentOptions
+            .filter(option => option.type === type)
+            .map((option, index) => (
+              <PaymentOption
+                key={option.uuid}
+                option={option}
+                index={index}
+                totalOptions={paymentOptions.length}
+                isSelected={selectedOption === option.uuid}
+                onSelect={() => handleSelect(option.uuid)}
+              />
+            ))}
+        </div>
+      ))}
     </>
   );
 }
