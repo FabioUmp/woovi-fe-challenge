@@ -27,7 +27,7 @@ function PaymentOption({
       ${index === 0 ? 'rounded-t-lg' : ''} 
       ${index === totalOptions - 1 ? 'rounded-b-lg' : ''} 
       ${index < totalOptions - 1 ? 'border-b' : ''} 
-      dark:border-green-500 ${isSelected ? 'bg-[#F4FBF9]' : ''}`}
+      dark:border-green-500 ${isSelected ? 'bg-[#ceefe6]' : ''}`}
     >
       <div className="flex items-center justify-between px-4 py-2">
         <div className="flex-1">
